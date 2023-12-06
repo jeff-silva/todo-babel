@@ -1,0 +1,11 @@
+{
+  "name": "todo-babel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jeff-silva/todo-babel.git",
+  "author": "Jeferson Silva <jeferson.i.silva@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "bash bin/dev"
+  }
+}
