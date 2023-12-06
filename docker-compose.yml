@@ -15,5 +15,19 @@ services:
     ports:
       - "${DB_PORT:-3306}:3306"
 
+  backend_nest:
+    image: node:18.16.0
+    working_dir: /usr/src/app
+    build: ./backend_nest/docker
+    command: bash -c "yarn install && yarn start:dev"
+    ports:
+      - ${BACKEND_PORT:-3000}:3000
+    volumes:
+      - ./backend_nest:/usr/src/app
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - db_mysql
+
 volumes:
   db_mysql_data:
