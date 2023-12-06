@@ -26,6 +26,7 @@ services:
       - ./backend_nest:/usr/src/app
     environment:
       - NODE_ENV=development
+      - DATABASE_URL=mysql://${DB_USER:-main}:${DB_PASS:-main}@localhost:${DB_PORT:-3306}/${DB_NAME:-main}?schema=public
     depends_on:
       - db_mysql
 
